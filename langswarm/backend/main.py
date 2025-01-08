@@ -1,12 +1,21 @@
+import os
 from fastapi import FastAPI
 from app.api import setup_routes
-from app.spinup import spin_up_service
+import uvicorn
 
+# Create the FastAPI app
 app = FastAPI()
 
 # Set up routes
 setup_routes(app)
 
+def spin_up():
+    """
+    Spin up the FastAPI app using Uvicorn.
+    """
+    port = int(os.getenv("APP_PORT", 8080))
+    uvicorn.run(app, host="0.0.0.0", port=port)
+
+# Optional: Allow running the app directly via `python main.py`
 if __name__ == "__main__":
-    # Spin-up logic (can be configured via environment variables)
-    spin_up_service(app)
+    spin_up()
