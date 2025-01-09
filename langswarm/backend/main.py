@@ -1,6 +1,6 @@
 import os
 from fastapi import FastAPI
-from app.api import setup_routes
+from .app.api import setup_routes
 import uvicorn
 
 # Create the FastAPI app
