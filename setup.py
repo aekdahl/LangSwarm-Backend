@@ -6,7 +6,7 @@ with open("requirements.txt", "r") as f:
     
 setup(
     name="langswarm-backend",
-    version="0.0.2",
+    version="0.0.4",
     description = "A FastAPI-based backend enabling seamless multi-agent orchestration and API integration for LangSwarm applications.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
