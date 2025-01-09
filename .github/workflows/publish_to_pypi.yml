@@ -31,7 +31,7 @@ jobs:
           pip install pytest
 
       - name: Run tests
-        run: pytest langswarm/tests/
+        run: pytest langswarm/tests/ --maxfail=0
         
   publish:
     needs: test
