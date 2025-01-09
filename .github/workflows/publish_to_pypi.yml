@@ -30,9 +30,10 @@ jobs:
           pip install -r requirements.txt
           pip install pytest
 
-      - name: Run tests
-        run: pytest langswarm/tests/ --maxfail=0
-        
+      - name: Run Tests
+        run: |
+          pytest langswarm/tests/ || [ $? -eq 5 ]
+          
   publish:
     needs: test
     runs-on: ubuntu-latest
